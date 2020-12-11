@@ -28,4 +28,8 @@ describe("fizzbuzz", () => {
   it("should return 4 when given 4", () => {
     expect(fizzbuzz(4)).toBe("4");
   });
+
+  it("should return 15 when given 15", () => {
+    expect(fizzbuzz(15)).toBe("fizzbuzz");
+  });
 });
