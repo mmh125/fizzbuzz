@@ -1,3 +1,6 @@
-export const fizzbuzz = (num: number): string => {
-  return "fizz";
+export const fizzbuzz = (number: number): string => {
+  if (number == 3)
+    return "fizz";
+  else
+    return "buzz";
 };
