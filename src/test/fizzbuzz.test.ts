@@ -1,43 +1,25 @@
 import { fizzbuzz } from "../main/fizzbuzz";
 
 describe("fizzbuzz", () => {
-  it("should return fizz when given 3", () => {
-    expect(fizzbuzz(3)).toBe("fizz");
+  it.each([3, 6, 9])("should return fizz when given %s", (num) => {
+    expect(fizzbuzz(num)).toBe("fizz");
   });
 
-  it("should return buzz when given 5", () => {
-    expect(fizzbuzz(5)).toBe("buzz");
+  it.each([5, 10, 20])("should return buzz when given %s", (num) => {
+    expect(fizzbuzz(num)).toBe("buzz");
   });
 
-  it("should return fizz when given 6", () => {
-    expect(fizzbuzz(6)).toBe("fizz");
+  it.each([15, 30, 45])("should return fizzbuzz when given %s", (num) => {
+    expect(fizzbuzz(num)).toBe("fizzbuzz");
   });
 
-  it("should return fizz when given 9", () => {
-    expect(fizzbuzz(9)).toBe("fizz");
-  });
-
-  it("should return 1 when given 1", () => {
-    expect(fizzbuzz(1)).toBe("1");
-  });
-
-  it("should return 2 when given 2", () => {
-    expect(fizzbuzz(2)).toBe("2");
-  });
-
-  it("should return 4 when given 4", () => {
-    expect(fizzbuzz(4)).toBe("4");
-  });
-
-  it("should return 15 when given 15", () => {
-    expect(fizzbuzz(15)).toBe("fizzbuzz");
-  });
-
-  it("should return 30 when given 30", () => {
-    expect(fizzbuzz(30)).toBe("fizzbuzz");
-  });
-
-  it("should return 45 when given 45", () => {
-    expect(fizzbuzz(45)).toBe("fizzbuzz");
+  describe.each([
+    [1, "1"],
+    [2, "2"],
+    [4, "4"],
+  ])("when given numbers", (number, expected) => {
+    it(`should return ${number} when given ${expected}`, () => {
+      expect(fizzbuzz(number)).toBe(expected);
+    });
   });
 });
